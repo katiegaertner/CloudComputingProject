@@ -25,3 +25,19 @@ jobs:
     - name: Format Code
       run: |
         make format
+
+  deploy:
+    
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up GCloud CLI
+      uses: google-github-actions/setup-gcloud@main
+      with:
+        service_account_key: ${{ secrets.GCP_CREDENTIALS }}
+        export_default_credentials: true
+    - name: Deploy backend to app engine development
+      run: |
+        gcloud config set project $GCLOUD_PROJECT
+        gcloud app deploy --version 20220504t165525
