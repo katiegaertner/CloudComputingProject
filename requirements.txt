@@ -1,7 +1,8 @@
 pylint
 pytest
 black
-
-Flask==0.11.1
-gunicorn==19.6.0
 pandas
+flask_restful
+
+Flask==2.0.3
+gunicorn==19.6.0
