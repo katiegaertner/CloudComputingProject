@@ -25,3 +25,14 @@ jobs:
     - name: Format Code
       run: |
         make format
+
+  deploy:
+    
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up GCloud CLI
+      uses: google-github-actions/setup-gcloud@main
+      with:
+        service_account_key: ${{ secrets.GCP_CREDENTIALS }}
