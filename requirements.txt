@@ -3,6 +3,9 @@ pytest
 black
 pandas
 flask_restful
+google
+google-cloud-bigquery
+google-cloud-bigquery-storage
 
 Flask==2.0.3
 gunicorn==19.6.0

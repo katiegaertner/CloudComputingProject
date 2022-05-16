@@ -1,6 +1,7 @@
 install:
 	pip3 install --upgrade pip &&\
 	pip3 install -r requirements.txt
+	pip3 install --upgrade google-cloud-BigQuery
 	python3 -m pip install flask
 
 test:
