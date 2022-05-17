@@ -2,10 +2,11 @@ pylint
 pytest
 black
 pandas
+flask
 flask_restful
 google
 google-cloud-bigquery
 google-cloud-bigquery-storage
 
-Flask==2.0.3
+Flask
 gunicorn==19.6.0
