@@ -38,7 +38,7 @@ df = query_job.to_dataframe()
 
 res = query_job_2.result()
 for row in res:
-    output = "The daily model forecasts " + str(row[0]) + " motor vehicle thefts in Chicago on June 1, 2022."
+    output = "The daily thefts model forecasts " + str(row[0]) + " motor vehicle thefts in Chicago on June 1, 2022."
 
 #Create Plot
 fig = px.line(df, x='Date', y = df.columns[1:4], 
