@@ -12,6 +12,7 @@ server = app.server
 #constructing bigquery client object
 client = bigquery.Client()
 
+#Timeseries forecast for graph
 query = """
     SELECT 
         time_series_timestamp AS Date, 
@@ -23,11 +24,12 @@ query = """
         STRUCT(30 AS horizon, 0.8 AS confidence_level))
     """
 
+#Forecast for June 1, 2022
 query1 = """
-        SELECT ROUND(time_series_data) AS forecast 
-        FROM `gaertnergcp.chicago_crimes.Daily_MVT_Forecast`
-        WHERE time_series_timestamp = '2022-06-01 00:00:00 UTC'
-        """
+    SELECT ROUND(time_series_data) AS forecast
+    FROM `gaertnergcp.chicago_crimes.Daily_MVT_Forecast` 
+    WHERE CAST(time_series_timestamp AS DATE) = CURRENT_DATE()
+    """
 
 #API Request
 query_job = client.query(query)
@@ -36,17 +38,16 @@ query_job_2 = client.query(query1)
 #Query to Dataframe
 df = query_job.to_dataframe()
 
+#Output June 1, 2022 forecast
 res = query_job_2.result()
 for row in res:
-    output = "The daily thefts model forecasts " + str(row[0]) + " motor vehicle thefts in Chicago on June 1, 2022."
+    output = "The model forecasts there will be " + str(row[0]) + " motor vehicle thefts in Chicago today."
 
-#Create Plot
+#Create Timeseries Plot
 fig = px.line(df, x='Date', y = df.columns[1:4], 
                 title = 'Motor Vehicle Thefts in Chicago by Month from 2000 to 2024 (Historical and Forecasted)'
                 )
-
 fig.update_layout(yaxis={"title": "Total Monthly Thefts"}, legend={"title":""})
-
 fig.update_layout(font_family="Times New Roman")
 
 app.layout = html.Div(children = [
@@ -61,7 +62,7 @@ app.layout = html.Div(children = [
 if __name__ == '__main__':
     app.run_server(debug=True, host="0.0.0.0", port=8080)
 
-
+#Alternative App without graphic
 #from flask import Flask
 #from flask_restful import Api
 #from google.cloud import bigquery
