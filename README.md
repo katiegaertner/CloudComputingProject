@@ -2,7 +2,7 @@
 
 This project was done for the Northwestern MS Data Science Analytics Application Engineering course. The project objective was to create a Machine Learning application deployed through a Continuous Integration and Continuous Development (CI/CD) pipeline hosted on Google Cloud Platform’s (GCP) App Engine.
 
-I chose to use historical crime data for the city of Chicago to forecast motor vehicle thefts (MVT) in Chicago over various time intervals. The app outputs the forecasted number of MVTs in Chicago on a specific day (in this case, June 1, 2022) as well as a graph depicting historical MVTs at the monthly level, forecasted monthly MVTs with an upper and lower forecast bound at the 80% confidence level.
+I chose to use historical crime data for the city of Chicago to forecast motor vehicle thefts (MVT) in Chicago over various time intervals. The app outputs the forecasted number of MVTs in Chicago for the current date, as well as a graph depicting historical MVTs at the monthly level, forecasted monthly MVTs with an upper and lower forecast bound at the 80% confidence level.
 
 ## Set Up
 
@@ -20,6 +20,6 @@ I used GCP’s BigQuery to source the publicly-available Chicago Crimes dataset,
 
 When navigating to the active application URL, a user will see the following:
 
-![Cloud Project App Outcome](https://user-images.githubusercontent.com/96923975/171253843-8047b327-15d6-4435-89c0-cd6ecfae59fd.png)
+![Cloud Project App Outcome](https://user-images.githubusercontent.com/96923975/171262560-e23bee5e-6be9-45b3-81a5-3001ff1a9ce2.png)
 
 ## Demonstration
