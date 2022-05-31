@@ -26,7 +26,7 @@ query = """
 
 #Forecast for June 1, 2022
 query1 = """
-    SELECT ROUND(time_series_data) AS forecast
+    SELECT ROUND(time_series_data) AS forecast, CURRENT_DATE() as today
     FROM `gaertnergcp.chicago_crimes.Daily_MVT_Forecast` 
     WHERE CAST(time_series_timestamp AS DATE) = CURRENT_DATE()
     """
@@ -41,7 +41,7 @@ df = query_job.to_dataframe()
 #Output June 1, 2022 forecast
 res = query_job_2.result()
 for row in res:
-    output = "The model forecasts there will be " + str(row[0]) + " motor vehicle thefts in Chicago today."
+    output = "The model forecasts there will be " + str(row[0]) + " motor vehicle thefts in Chicago today, " + str(row[1]) + "."
 
 #Create Timeseries Plot
 fig = px.line(df, x='Date', y = df.columns[1:4], 
