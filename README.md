@@ -10,7 +10,7 @@ Files for the project were created and managed on a GCP project virtual environm
 
 ## Architecture
 
-![Cloud Project Architecture Map](https://user-images.githubusercontent.com/96923975/171253180-247d8cac-30f3-4b91-9463-fb78040e0690.jpg)
+<img width="1020" alt="Cloud Project Architecture Map" src="https://user-images.githubusercontent.com/96923975/171256238-7da986f2-1dbb-46ee-ba1e-af2b05eb2a05.png">
 
 ## Application
 
