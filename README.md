@@ -20,6 +20,6 @@ I used GCP’s BigQuery to source the publicly-available Chicago Crimes dataset,
 
 When navigating to the active application URL, a user will see the following:
 
-![Cloud Project App Outcome](https://user-images.githubusercontent.com/96923975/171253401-69630e55-80f6-40d1-9a86-0d17e7e9e3d9.png)
+![Cloud Project App Outcome](https://user-images.githubusercontent.com/96923975/171253843-8047b327-15d6-4435-89c0-cd6ecfae59fd.png)
 
 ## Demonstration
