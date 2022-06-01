@@ -23,3 +23,5 @@ When navigating to the active application URL, a user will see the following:
 ![Cloud Project App Outcome](https://user-images.githubusercontent.com/96923975/171262560-e23bee5e-6be9-45b3-81a5-3001ff1a9ce2.png)
 
 ## Demonstration
+
+A brief video demonstration of the application can be found in the repository.
